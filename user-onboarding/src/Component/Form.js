@@ -2,7 +2,7 @@ import React from 'react';
 
 const Form = (props) => {
     const {change, submit} = props;
-    const {name, email, password, ToS, checked} = props.values;
+    const {name, email, password, ToS,} = props.values;
 
     const onChange = (evt) => {
         const {name,value,checked,type} = evt.target
@@ -47,7 +47,7 @@ const Form = (props) => {
             <input
                 type="checkbox"
                 name="ToS"
-                checked={checked}
+                checked={ToS}
                 onChange={onChange}
                 />
             </label>
