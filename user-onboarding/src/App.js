@@ -3,7 +3,7 @@ import './App.css';
 import Form from './Component/Form.js';
 import schema from '../src/Component/Validation/formSchema';
 import * as yup from 'yup';
-import axios from 'axios'
+import axios from 'axios';
 
 const initalValues = {
   username:'',
@@ -33,7 +33,7 @@ const onSubmit = () => {
   .catch(err => console.error(err))
 }
 
-const validate=(name,value) => {
+const validate = (name,value) => {
   yup.reach(schema, name)
   .validate(value)
   .then(() => setFormErrors({...formErrors, [name]: ''}))
@@ -47,7 +47,7 @@ const onChange = (name, value) => {
 
   return (
     <div className="App">
-      <Form values={formValues} change={onChange} errors={formErrors} submit={onSubmit}/>
+      <Form values={formValues} change={onChange} errors={formErrors} submit={onSubmit} />
         {users.map(user => (
           <div key={user.id}> 
           <p>{user.email}</p>
